@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timestamp Jalali Picker examples</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn@5.3.0/index.min.css">
+  <script src="timestamp.js"></script>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 48px 20px;
+      background: linear-gradient(145deg, #f4f7fb, #eef1f6);
+      color: #202938;
+      font: 16px 'Vazirmatn', Vazir, Tahoma, sans-serif;
+    }
+    .page { width: min(100%, 760px); margin: 0 auto; }
+    .intro { margin-bottom: 24px; text-align: center; }
+    h1 { margin: 0 0 10px; font-size: clamp(24px, 5vw, 32px); }
+    .intro p { margin: 0; color: #687386; }
+    .examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .example {
+      min-width: 0;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(46, 60, 82, .06);
+    }
+    .example-title { display: block; margin-bottom: 5px; font-weight: 700; }
+    .example-description { display: block; min-height: 23px; margin-bottom: 13px; color: #718096; font-size: 13px; }
+    .example input {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      color: #202938;
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      outline: 0;
+      font: inherit;
+      direction: ltr;
+      text-align: left;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .example input:focus { border-color: #ff7946; box-shadow: 0 0 0 3px rgba(255, 121, 70, .17); }
+    .note { margin: 20px 0 0; color: #718096; text-align: center; font-size: 13px; }
+    @media (max-width: 580px) { body { padding: 30px 16px; } .examples { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <h1>نمونه‌های Timestamp Jalali Picker</h1>
+      <p>روی هر ورودی کلیک کنید تا تقویم جلالی باز شود.</p>
+    </header>
+    <section class="examples" aria-label="نمونه‌ها">
+      <div class="example">
+        <label class="example-title" for="date">فقط تاریخ</label>
+        <span class="example-description">راه‌اندازی خودکار با data-rel</span>
+        <input id="date" data-rel="calendardate" placeholder="1405-06-11">
+      </div>
+      <div class="example">
+        <label class="example-title" for="datetime">تاریخ و زمان</label>
+        <span class="example-description">ساعت و دقیقه</span>
+        <input id="datetime" data-rel="calendardatetime" placeholder="1405-06-11 14:30">
+      </div>
+      <div class="example">
+        <label class="example-title" for="seconds">تاریخ، زمان و ثانیه</label>
+        <span class="example-description">فرمت کامل زمان</span>
+        <input id="seconds" data-rel="calendar" placeholder="1405-06-11 14:30:00">
+      </div>
+      <div class="example">
+        <label class="example-title" for="manual">راه‌اندازی دستی</label>
+        <span class="example-description">تقویم هنگام دریافت فوکوس باز می‌شود</span>
+        <input id="manual" placeholder="1405/06/11">
+      </div>
+    </section>
+    <p class="note">بدون jQuery و بدون فایل CSS جداگانه.</p>
+  </main>
+  </div>
+  <script>Timestamp.setup({inputField:'manual',ifFormat:'%Y/%m/%d',autoShowOnFocus:true});</script>
+</body>
+</html>
