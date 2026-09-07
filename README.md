@@ -3,6 +3,8 @@
 `timestamp.js` is a small, free Jalali (Persian) date and time picker. It injects its own styles, so no CSS file or jQuery is required.  
 Developed and maintained by [Timestamp](https://timestamp.ir).
 
+![Timestamp Jalali Picker demo](demo.png)
+
 ## Include it
 
 ```html
